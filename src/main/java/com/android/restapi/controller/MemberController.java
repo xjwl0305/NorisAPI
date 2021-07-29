@@ -23,8 +23,8 @@ public class MemberController {
     public MemberRepository memberRepository;
     @CrossOrigin
     @RequestMapping("/checkID")
-    public response checkID(@RequestBody Map<String, Object> param){
-        String id = (String) param.get("id");
+    public response checkID(@RequestParam(name="id") String ID){
+        String id = ID;
         List<user> find = memberRepository.checkID(id);
         response res = new response();
         if(find.size() > 0) {

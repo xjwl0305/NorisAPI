@@ -21,7 +21,6 @@ public class MemberController {
 
     @Autowired
     public MemberRepository memberRepository;
-    @CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping("/checkID")
     public response checkID(@RequestParam(name="id") String ID){
         List<user> find = memberRepository.checkID(ID);
